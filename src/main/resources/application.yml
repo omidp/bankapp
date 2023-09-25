@@ -1,0 +1,29 @@
+
+spring:
+  application:
+    name: webapp
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    generate-ddl: true
+    open-in-view: false
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: bank
+    password: bank
+    url: jdbc:postgresql://127.0.0.1:5432/bankdb
+    hikari:
+      connection-test-query: select 1
+customer:
+  #possible values are GEOIP, ADDRESS, NONE
+  country-validation: ADDRESS
+  countries:
+    - Netherlands
+    - Belgium
+    - Germany
+  excludeRateLimitUrls:
+    - /swagger
+
+server:
+  port: 8081
+

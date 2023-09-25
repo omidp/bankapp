@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "410e18d5-ea10-4d8b-bff4-63bcc9bc778c",
+		"name": "bankapi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2417979"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"bankuser\",\n  \"dob\": \"1990-01-01\",\n  \"username\": \"bankusername\",\n  \"ip\": \"string\",\n  \"address\": {\n    \"postcode\": \"string\",\n    \"country\": \"Netherlands\",\n    \"houseNo\": \"string\"\n  },\n  \"account\": {\n    \"accountType\": \"DEBIT\",\n    \"currency\": \"string\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "overview",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/overview",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"overview"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logon",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "string",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "c3RyaW5n",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8081/logon",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"logon"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

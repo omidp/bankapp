@@ -1,0 +1,30 @@
+version: '3.4'
+services:
+  db:
+    image: postgres:14.5
+    ports:
+      - "5432:5432"
+    networks:
+      - backend
+    container_name: bankdb
+    environment:
+      POSTGRES_PASSWORD: bank
+      POSTGRES_USER: bank
+      POSTGRES_DB: bankdb
+  app:
+    build:
+      dockerfile: docker/dev.Dockerfile
+      context: .
+    container_name: app
+    ports:
+      - "8081:8081"
+    networks:
+      - backend
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      POSTGRES_DB_HOSTNAME: db
+    depends_on:
+      - db
+
+networks:
+  backend:
