@@ -21,4 +21,8 @@ public class PostgreSQLProperties  {
     public String getDefaultDockerImage() {
         return "postgres:14-alpine";
     }
+
+    public static PostgreSQLProperties getInstance(){
+        return new PostgreSQLProperties();
+    }
 }
